@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM dimdm/node
 
 RUN npm install -g redis-commander
 

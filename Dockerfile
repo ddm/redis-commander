@@ -1,6 +1,8 @@
-FROM dimdm/node
+FROM dimdm/node:7.8.0
 
-RUN npm install -g redis-commander
+RUN npm install -g redis-commander &&\
+    adduser -D -u 1000 redis-commander
 
-ENTRYPOINT ["redis-commander"]
-CMD ["--redis-port", "6379", "--redis-host", "redis"]
+USER redis-commander
+WORKDIR /tmp
+CMD redis-commander --redis-port 6379 --redis-host redis

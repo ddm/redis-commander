@@ -1,4 +1,4 @@
-FROM dimdm/node:7.8.0
+FROM dimdm/node:7.10.0
 
 RUN npm install -g redis-commander &&\
     adduser -D -u 1000 redis-commander
